@@ -16,6 +16,10 @@ You paste it into ChatGPT, Gemini, Claude or any chatbot, in the browser or a te
 
 ---
 
+## Cloud development
+
+See [SETUP.md](SETUP.md) for the tested Python environment, test commands, and offline server startup. No Ollama models are required for offline mode.
+
 ## Quick start (macOS)
 
 ```bash
