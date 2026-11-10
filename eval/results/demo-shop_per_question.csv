@@ -1,0 +1,49 @@
+question,variant,recall,selected,missing
+why is the login button not working,keywords only,0.5,web/src/components/LoginForm.jsx | web/src/pages/CartPage.jsx,web/src/api/auth.js
+why is the login button not working,+ query expansion,1.0,web/src/components/LoginForm.jsx | server/auth/routes.py | web/src/api/auth.js | web/src/pages/CartPage.jsx | server/auth/reset.py | web/src/hooks/useAuth.js,
+why is the login button not working,+ vectors,1.0,web/src/components/LoginForm.jsx | server/auth/routes.py | web/src/api/auth.js | server/auth/reset.py | web/src/pages/CartPage.jsx | web/src/hooks/useAuth.js,
+why is the login button not working,+ graph,1.0,web/src/components/LoginForm.jsx | server/auth/routes.py | web/src/api/auth.js | server/auth/reset.py | web/src/pages/CartPage.jsx | web/src/hooks/useAuth.js,
+login fails with invalid email or password even with the right password,keywords only,0.5,web/src/components/LoginForm.jsx | server/utils/email.py | server/auth/routes.py | web/src/api/auth.js | server/auth/reset.py | server/models/user.py,server/utils/security.py
+login fails with invalid email or password even with the right password,+ query expansion,0.5,server/auth/routes.py | server/auth/reset.py | web/src/api/auth.js | web/src/components/LoginForm.jsx | server/utils/email.py | web/src/hooks/useAuth.js,server/utils/security.py
+login fails with invalid email or password even with the right password,+ vectors,1.0,server/auth/routes.py | server/auth/reset.py | web/src/api/auth.js | web/src/components/LoginForm.jsx | server/utils/email.py | server/utils/security.py,
+login fails with invalid email or password even with the right password,+ graph,1.0,server/auth/routes.py | server/auth/reset.py | web/src/api/auth.js | web/src/components/LoginForm.jsx | server/utils/email.py | server/utils/security.py,
+password reset email never arrives,keywords only,1.0,server/auth/reset.py | server/utils/email.py | web/src/api/auth.js | server/auth/routes.py | web/src/components/LoginForm.jsx | server/models/user.py,
+password reset email never arrives,+ query expansion,1.0,server/auth/reset.py | server/utils/email.py | web/src/api/auth.js | server/auth/routes.py | server/utils/security.py | server/models/user.py,
+password reset email never arrives,+ vectors,1.0,server/auth/reset.py | server/utils/email.py | web/src/api/auth.js | server/auth/routes.py | server/utils/security.py | server/models/user.py,
+password reset email never arrives,+ graph,1.0,server/auth/reset.py | web/src/api/auth.js | server/utils/email.py | server/auth/routes.py | server/utils/security.py | server/models/user.py,
+reset link says invalid or expired token,keywords only,1.0,server/auth/reset.py,
+reset link says invalid or expired token,+ query expansion,1.0,server/auth/reset.py | server/auth/routes.py | web/src/api/auth.js,
+reset link says invalid or expired token,+ vectors,1.0,server/auth/reset.py | server/auth/routes.py | web/src/api/auth.js,
+reset link says invalid or expired token,+ graph,1.0,server/auth/reset.py | web/src/api/auth.js | server/auth/routes.py | server/app.py,
+where is the stripe payment key configured?,keywords only,1.0,server/config.py,
+where is the stripe payment key configured?,+ query expansion,1.0,server/config.py | server/orders/routes.py | server/app.py,
+where is the stripe payment key configured?,+ vectors,1.0,server/config.py | server/orders/routes.py | server/app.py | web/src/pages/CartPage.jsx | server/auth/reset.py,
+where is the stripe payment key configured?,+ graph,1.0,server/config.py | server/app.py | server/orders/routes.py | server/auth/reset.py | web/src/pages/CartPage.jsx | server/models/user.py,
+how are products searched?,keywords only,1.0,web/src/pages/ProductsPage.jsx | server/products/routes.py | web/src/api/products.js,
+how are products searched?,+ query expansion,1.0,web/src/pages/ProductsPage.jsx | web/src/api/products.js | server/products/routes.py,
+how are products searched?,+ vectors,1.0,web/src/pages/ProductsPage.jsx | web/src/api/products.js | server/products/routes.py | server/app.py,
+how are products searched?,+ graph,1.0,web/src/pages/ProductsPage.jsx | web/src/api/products.js | server/products/routes.py | server/app.py | server/orders/routes.py | web/src/pages/CartPage.jsx,
+checkout says please log in even after logging in,keywords only,1.0,web/src/pages/CartPage.jsx | web/src/components/LoginForm.jsx | web/src/App.jsx,
+checkout says please log in even after logging in,+ query expansion,0.5,web/src/pages/CartPage.jsx | web/src/components/LoginForm.jsx | server/orders/routes.py | server/auth/routes.py | web/src/api/auth.js | server/auth/reset.py,web/src/App.jsx
+checkout says please log in even after logging in,+ vectors,1.0,web/src/pages/CartPage.jsx | web/src/components/LoginForm.jsx | server/orders/routes.py | web/src/api/auth.js | server/auth/routes.py | web/src/App.jsx,
+checkout says please log in even after logging in,+ graph,0.5,web/src/pages/CartPage.jsx | web/src/components/LoginForm.jsx | web/src/api/auth.js | server/auth/routes.py | server/orders/routes.py | server/auth/reset.py,web/src/App.jsx
+placing an order returns 400 cart is empty,keywords only,1.0,server/orders/routes.py | web/src/pages/CartPage.jsx | web/src/api/products.js,
+placing an order returns 400 cart is empty,+ query expansion,1.0,server/orders/routes.py | web/src/pages/CartPage.jsx | web/src/api/products.js,
+placing an order returns 400 cart is empty,+ vectors,1.0,server/orders/routes.py | web/src/pages/CartPage.jsx | web/src/api/products.js,
+placing an order returns 400 cart is empty,+ graph,1.0,server/orders/routes.py | web/src/pages/CartPage.jsx | web/src/api/products.js | server/app.py,
+how do I add a phone number field to users?,keywords only,1.0,server/auth/routes.py | server/models/user.py,
+how do I add a phone number field to users?,+ query expansion,1.0,server/auth/routes.py | server/models/user.py,
+how do I add a phone number field to users?,+ vectors,1.0,server/auth/routes.py | server/models/user.py | web/src/api/auth.js | server/orders/routes.py | web/src/App.jsx,
+how do I add a phone number field to users?,+ graph,1.0,server/auth/routes.py | server/models/user.py | web/src/api/auth.js | server/app.py | server/orders/routes.py | web/src/App.jsx,
+user stays logged out after page refresh,keywords only,0.5,web/src/pages/CartPage.jsx | web/src/pages/ProductsPage.jsx | server/models/user.py | web/src/App.jsx | web/src/components/LoginForm.jsx,web/src/hooks/useAuth.js
+user stays logged out after page refresh,+ query expansion,0.5,web/src/pages/CartPage.jsx | web/src/components/LoginForm.jsx | web/src/pages/ProductsPage.jsx | web/src/App.jsx | server/models/user.py | server/auth/routes.py,web/src/hooks/useAuth.js
+user stays logged out after page refresh,+ vectors,0.5,web/src/pages/CartPage.jsx | web/src/App.jsx | web/src/components/LoginForm.jsx | web/src/pages/ProductsPage.jsx | server/models/user.py | server/auth/routes.py,web/src/hooks/useAuth.js
+user stays logged out after page refresh,+ graph,0.5,web/src/pages/CartPage.jsx | web/src/App.jsx | web/src/components/LoginForm.jsx | web/src/pages/ProductsPage.jsx | server/models/user.py | server/auth/routes.py,web/src/hooks/useAuth.js
+how are passwords hashed?,keywords only,1.0,server/utils/security.py | server/auth/reset.py | server/auth/routes.py | server/models/user.py | web/src/api/auth.js | web/src/components/LoginForm.jsx,
+how are passwords hashed?,+ query expansion,1.0,server/auth/reset.py | server/utils/security.py | server/auth/routes.py | server/models/user.py | web/src/api/auth.js,
+how are passwords hashed?,+ vectors,1.0,server/auth/reset.py | server/utils/security.py | server/auth/routes.py | web/src/api/auth.js | server/models/user.py,
+how are passwords hashed?,+ graph,1.0,server/auth/reset.py | server/utils/security.py | server/auth/routes.py | web/src/api/auth.js | server/models/user.py,
+where are blueprints registered in the flask app?,keywords only,1.0,server/app.py | web/src/App.jsx | server/orders/routes.py | server/products/routes.py | server/auth/routes.py | server/auth/reset.py,
+where are blueprints registered in the flask app?,+ query expansion,1.0,server/app.py | web/src/App.jsx | server/orders/routes.py | server/products/routes.py | server/auth/routes.py | server/auth/reset.py,
+where are blueprints registered in the flask app?,+ vectors,1.0,server/app.py | web/src/App.jsx | server/auth/reset.py | server/auth/routes.py | server/orders/routes.py,
+where are blueprints registered in the flask app?,+ graph,1.0,server/app.py | web/src/App.jsx | server/auth/reset.py | server/auth/routes.py | server/orders/routes.py | server/products/routes.py,

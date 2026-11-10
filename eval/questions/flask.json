@@ -1,0 +1,19 @@
+{
+  "repo": "https://github.com/pallets/flask (clone it and pass --repo PATH)",
+  "questions": [
+    {"q": "how does the @app.route decorator register a view function?", "expected": ["src/flask/sansio/scaffold.py", "src/flask/sansio/app.py"]},
+    {"q": "how is the session cookie signed and loaded?", "expected": ["src/flask/sessions.py"]},
+    {"q": "how does render_template find and render a template?", "expected": ["src/flask/templating.py"]},
+    {"q": "how does jsonify build a JSON response?", "expected": ["src/flask/json/__init__.py", "src/flask/json/provider.py"]},
+    {"q": "what happens when the app context is pushed?", "expected": ["src/flask/ctx.py"]},
+    {"q": "how do blueprints get registered on the app?", "expected": ["src/flask/sansio/blueprints.py"]},
+    {"q": "how does the flask run command start the development server?", "expected": ["src/flask/cli.py"]},
+    {"q": "how does config.from_object load settings?", "expected": ["src/flask/config.py"]},
+    {"q": "how does send_from_directory serve files safely?", "expected": ["src/flask/helpers.py"]},
+    {"q": "how does the test client make requests in tests?", "expected": ["src/flask/testing.py"]},
+    {"q": "how are class-based views like MethodView dispatched?", "expected": ["src/flask/views.py"]},
+    {"q": "where are the request and g proxies defined?", "expected": ["src/flask/globals.py"]},
+    {"q": "how are signals like request_started sent?", "expected": ["src/flask/signals.py"]},
+    {"q": "how are custom error handlers for 404 looked up?", "expected": ["src/flask/sansio/app.py", "src/flask/app.py"]}
+  ]
+}

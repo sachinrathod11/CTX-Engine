@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ctx · project context engine</title>
+<link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+<header class="top">
+  <div class="brand"><span class="mark">ctx</span><span class="brand-sub">project context engine</span></div>
+  <div class="top-right">
+    <span id="llm-status" class="pill pill-muted">Checking local models…</span>
+    <a class="toplink" href="/api/docs" target="_blank" rel="noopener">API</a>
+  </div>
+</header>
+
+<div class="layout">
+  <aside class="side">
+    <div class="side-head">
+      <h2>Projects</h2>
+    </div>
+    <ul id="projects" class="projects"></ul>
+    <form id="add-form" class="add-form" autocomplete="off">
+      <input id="add-path" type="text" placeholder="/Users/you/code/my-app" aria-label="Project folder path">
+      <button type="submit">Add</button>
+    </form>
+    <p id="add-error" class="err" hidden></p>
+    <p class="hint">Paste the full path of a project folder. It's indexed on this laptop and kept up to date as you save files.</p>
+
+    <section id="proj-info" class="proj-info" hidden>
+      <div class="proj-name" id="pi-name"></div>
+      <div class="proj-path" id="pi-path"></div>
+      <div id="pi-progress" class="progress" hidden>
+        <div class="progress-label"><span id="pi-stage"></span><span id="pi-count"></span></div>
+        <div class="bar"><div id="pi-bar"></div></div>
+        <div class="progress-msg" id="pi-msg"></div>
+      </div>
+      <dl class="stats" id="pi-stats"></dl>
+      <div class="proj-actions">
+        <button id="reindex" class="small">Refresh index</button>
+        <button id="remove" class="small ghost">Remove</button>
+      </div>
+    </section>
+  </aside>
+
+  <main class="main">
+    <section class="ask">
+      <label for="q" class="ask-label">Your question</label>
+      <textarea id="q" rows="3" placeholder="e.g. Why is the login button not working?"></textarea>
+      <div class="controls">
+        <label class="budget">Size
+          <input type="range" id="budget" min="1000" max="12000" step="500" value="3500">
+          <span id="budget-out">3,500</span> tokens
+        </label>
+        <label class="chk"><input type="checkbox" id="use-llm" checked> Local LLM</label>
+        <label class="chk"><input type="checkbox" id="rewrite" checked> Rewrite question</label>
+        <span class="spacer"></span>
+        <span class="kbd-hint">Ctrl + Enter</span>
+        <button id="go" class="primary">Build prompt</button>
+      </div>
+      <p id="ask-error" class="err" hidden></p>
+    </section>
+
+    <section id="empty" class="empty">
+      <ol>
+        <li><strong>Add a project</strong> on the left. It's indexed locally: files, functions, imports and which frontend calls hit which backend routes.</li>
+        <li><strong>Ask a question</strong> the way you'd ask a teammate.</li>
+        <li><strong>Copy the prompt</strong> into ChatGPT, Gemini, Claude or any chatbot. It now knows the code that matters.</li>
+      </ol>
+    </section>
+
+    <section id="loading" class="loading" hidden>
+      <div class="spinner"></div><span id="loading-msg">Reading your project…</span>
+    </section>
+
+    <section id="result" class="result" hidden>
+      <div class="col-prompt">
+        <div class="prompt-head">
+          <div class="meter-wrap">
+            <div class="meter"><div id="meter-bar"></div></div>
+            <span id="tok" class="tok"></span>
+          </div>
+          <span id="redact-badge" class="pill pill-warn" hidden></span>
+          <span class="spacer"></span>
+          <button id="download" class="small ghost">Download .md</button>
+          <button id="copy" class="primary">Copy prompt</button>
+        </div>
+        <textarea id="prompt" spellcheck="false" aria-label="Generated prompt"></textarea>
+        <p class="muted small-text" id="timings"></p>
+      </div>
+
+      <div class="col-files">
+        <h3>Rewritten question</h3>
+        <p id="rewritten" class="rewritten"></p>
+
+        <h3>Files <span class="muted">· uncheck to leave out, check to add</span></h3>
+        <ul id="files" class="files"></ul>
+        <div class="add-file">
+          <input id="file-search" list="file-list" placeholder="Add another file…" aria-label="Add a file">
+          <datalist id="file-list"></datalist>
+          <button id="add-file" class="small">Add</button>
+        </div>
+        <button id="rebuild" class="small" disabled>Rebuild with my selection</button>
+
+        <div id="conn-wrap">
+          <h3>How they connect</h3>
+          <ul id="connections" class="connections"></ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="history" id="history-wrap" hidden>
+      <h3>Recent questions</h3>
+      <ul id="history"></ul>
+    </section>
+  </main>
+</div>
+<div id="toast" class="toast" role="status" aria-live="polite"></div>
+<script src="/static/app.js"></script>
+</body>
+</html>

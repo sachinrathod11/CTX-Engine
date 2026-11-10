@@ -1,0 +1,17 @@
+{
+  "repo": "examples/demo-shop",
+  "questions": [
+    {"q": "why is the login button not working", "expected": ["web/src/components/LoginForm.jsx", "web/src/api/auth.js"]},
+    {"q": "login fails with invalid email or password even with the right password", "expected": ["server/auth/routes.py", "server/utils/security.py"]},
+    {"q": "password reset email never arrives", "expected": ["server/auth/reset.py", "server/utils/email.py"]},
+    {"q": "reset link says invalid or expired token", "expected": ["server/auth/reset.py"]},
+    {"q": "where is the stripe payment key configured?", "expected": ["server/config.py"]},
+    {"q": "how are products searched?", "expected": ["server/products/routes.py", "web/src/api/products.js"]},
+    {"q": "checkout says please log in even after logging in", "expected": ["web/src/pages/CartPage.jsx", "web/src/App.jsx"]},
+    {"q": "placing an order returns 400 cart is empty", "expected": ["server/orders/routes.py", "web/src/api/products.js"]},
+    {"q": "how do I add a phone number field to users?", "expected": ["server/models/user.py", "server/auth/routes.py"]},
+    {"q": "user stays logged out after page refresh", "expected": ["web/src/hooks/useAuth.js", "web/src/App.jsx"]},
+    {"q": "how are passwords hashed?", "expected": ["server/utils/security.py"]},
+    {"q": "where are blueprints registered in the flask app?", "expected": ["server/app.py"]}
+  ]
+}
